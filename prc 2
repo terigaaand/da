@@ -1,0 +1,151 @@
+Practical 02
+Write a program using Kotlin to implement control structures and loops.
+1)
+Code:
+fun main(){
+     //nested loops and if else
+    val rows = 5 
+    val columns = 5
+    println("Pattern: ")
+    for(i in 1.. rows){
+        for(j in 1.. columns){
+            if(i==j || i+j == rows + 1){
+                print("* ")
+            }else{
+                print("- ")
+            }
+        }
+        println()
+    }
+
+    //Do-while loop
+    var x = 1
+    println("Counting from 1 to 10 using do-shile loop.")
+    do{
+        print("$x ")
+        x++ 
+    }while(x<=10)
+    println()
+    
+    //Using when with range
+    val value = 42 
+    val result = when(value){
+        in 1..10 -> "Value is between 1 and 10"
+        in 11..20 -> "Value is between 11 and 20"
+        else -> "Value is out of range"
+    }
+    println(result)
+}
+Output:
+ 
+2)
+Code:
+fun main(){
+     //Range and check in range
+    val num = 7
+    if(num in 1..10){
+        println("Number $num is in range 1 to 10")
+    }else{
+        println("Number $num is not in range 1 to 10")
+    }
+    
+    //Checking if a collection contains an element
+    val fruits = listOf("Apple","Orange","Banana")
+    if("Orange" in fruits){
+        println("Found Orange in the fruits list")
+    }else{
+        println("Orange not found in the fruits list")
+    }
+    
+    //When expression with range
+    var age = 25
+    var ageGroup = when(age){
+        in 0..12 -> "Child"
+        in 13..19 -> "Teenager"
+        in 20..59 -> "Adult"
+        else -> "Senior"
+    }
+    println("Person is in the $ageGroup age group")
+    
+
+    //Using when expression without argument
+    val timeOfDay ="morning"
+    val greeting = when{
+        timeOfDay == "morning" -> "Good Morning!"
+        timeOfDay == "evening" -> "Good Evening!"
+        else -> "Hello!"
+    }
+    println(greeting)
+
+    //Returning from when expression
+    val x = 5
+    val result = when(x){
+        1 ->{
+            println("x is 1")
+            "One"
+        }
+        2->{
+            println("x is 2")
+            "Two"
+        }
+        else->{
+            println("x is neither 1 nor 2")
+            "unknown"
+        }
+    }
+    println("Result:$result")
+}
+Output:
+ 
+3)
+Code:
+fun main(){
+    //Using if-else as expression
+    val num = 15
+    val result = if(num > 10){
+        "Number is greater than 10"
+    }else{
+        "Number is less than or equal to 10"
+    }
+    println(result)
+    
+    //Using when the expression with types
+    val obj: Any = "Hello"
+    val type = when(obj){
+        is Int -> "Integer"
+        is String -> "String"
+        is Double -> "Double"
+        else -> "Unlknown Type"
+    }
+    println("Object is of type: $type")
+    
+    //Using while loop with a condition
+    var i = 0 
+    while (i<5){
+        println("Value of i : $i")
+        i++ 
+    }
+    
+    //Using do-while loop
+    var j = 5
+    do{
+        println("Value of j:$j")
+        j-- 
+    }while(j>0)
+    
+    //Checking nullability using if-else
+    val nullableString: String? = null
+    val length = if(nullableString != null) nullableString.length else -1
+    println("Length of nullable string: $length")
+    
+    //Using Elvis operator for null saftey
+    val nonNullString: String? = "Hello,Kotlin"
+    val stringLength = nonNullString?.length?:-1 
+    println("Length of non-null string: $stringLength")
+}
+Output:
+  
+
+
+
+
