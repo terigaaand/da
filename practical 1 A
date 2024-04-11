@@ -1,0 +1,503 @@
+PRACTICAL NO.1 (A)
+1)Write a program to find area and perimeter of circle. Accept radius as command line argument.
+CODE:
+import java.util.Scanner;
+class AreaOfCircle
+{
+	public static void main(String[] args)
+	{
+		double r,area,per;
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter radius=");
+		r=sc.nextDouble();
+		area=Math.PI*r*r;
+		per=2*Math.PI*r;
+		System.out.println("if r="+r+" \nthen area="+area+"\nperimeter="+per);
+	}
+}
+OUTPUT:
+ 
+2)Sale tax in some city is 8.25%. Write a program that accept a price on the command line and prints out the appropriate tax and total purchase price.
+CODE:
+import java.util.Scanner;
+class TaxCal
+{
+	public static void main(String[] args)
+	{
+		double p,tax,total;
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter price:");
+		p=sc.nextDouble();
+		tax=p*(8.25/100);
+		total=p+tax;
+		System.out.print("tax="+tax+" \nTotal price="+total);
+	}
+}
+OUTPUT:
+ 
+3)There are exactly 2.54 centimeters to an inch. Write a program that takes a number of inches from user line command and converts it to centimeters. 
+CODE:
+class InchToCm
+{
+	public static void main(String[] args)
+	{
+		float inch,cm;
+		inch=Float.parseFloat(args[0]);
+		cm=inch*2.54F;
+		System.out.println(inch+" Inch ="+cm+" centimters");
+	}
+}
+OUTPUT:
+ 
+4)Write a program to accept the initial letter of the name & display the friend name by using switch statement.
+CODE:
+import java.util.Scanner;
+class FriendNameSwitch 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter the initial letter of your friend's name: ");
+		char initial = sc.next().charAt(0);
+		String friendName;
+		switch (initial) 
+		{
+			case 'A':
+			friendName = "Amol";
+			break;
+			case 'B':
+			friendName = "Babu";
+			break;
+			case 'C':
+			friendName = "Chaitali";
+			break;
+			case 'D':
+			friendName = "Dhanu";
+			break;
+			default:
+			friendName = "Unknown";
+		}
+		System.out.println("Your friend's name is: " + friendName);
+    }
+}
+
+OUTPUT:
+ 
+
+
+5)Write a java program to find solution of quadratic equation. Accept a, b and c from user. 
+CODE:
+import java.util.Scanner;
+class Qadratic
+{
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter value for a:");
+		int a=sc.nextInt();
+		System.out.println("Enter value for b");
+		int b=sc.nextInt();
+		System.out.println("Enter value for c");
+		int c=sc.nextInt();
+		int  d=(b*b)-(4*a*c);
+		System.out.println("Discriminator="+d);
+		if(d>0)
+		{
+			System.out.println("Roots are real & they are unequal");
+			double root1=(-b+Math.sqrt(d))/(2*a);
+			double root2=(-b+Math.sqrt(d))/(2*a);
+			System.out.println("Root1="+root1);
+			System.out.println("Root2="+root2);
+		}
+		else if(d==0)
+		{
+			System.out.println("Roots are real & they are equal");
+			double root1=(-b+Math.sqrt(d))/(2*a);
+			System.out.println("Root1="+root1);
+		}
+		else
+		{
+			System.out.println("Roots are IMAGINARY");
+		}
+	}
+}
+OUTPUT:
+ 
+6) Write a program to calculate the sum of digits of given any number.
+CODE:
+import java.util.Scanner;
+class sum
+{
+	public static void main(String[] args)
+	{
+		double a,b,c;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter 1st digit:");
+		a=sc.nextDouble();
+		System.out.println("Enter 2nd digit:");
+		b=sc.nextDouble();
+		c=a+b;
+		System.out.println("sum of "+a+" and "+b+" is "+c);
+	}
+}
+OUTPUT:
+ 
+7)Write a program to find whether given year is leap or not.
+CODE: 
+import java.util.Scanner;
+class IsLeap
+{
+	public static void main(String[] args)
+	{
+		int year;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the year");
+		year=sc.nextInt();
+		if (((year%4==0)&&(year%100!=0))||(year%400==0))
+
+		{
+			System.out.println("year "+year+" is leap year");
+		}
+		else
+		{
+			System.out.println("year "+year+" is not leap year");
+		}
+	}
+}
+OUTPUT:
+ 
+8)Write a program to check upper case or lower case of character.
+CODE:
+import java.util.Scanner;
+class UpperLower
+{
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter Charecter");
+		String c=sc.next();
+		char ch=c.charAt(0);
+		if(ch>='A' && ch<='Z')
+		{
+			System.out.println(ch+" charecter is uppwecase");
+		}
+		else if(ch>=97 && ch<=122)
+		{
+			System.out.println(ch+" charecter is lowercase");
+		}
+		else
+		{
+			System.out.println(ch+" charecter is lowercase");
+		}
+	}
+}
+OUTPUT:
+ 
+9) Write a program to find whether entered character is a vowel, consonant, number or special character.
+CODE:
+import java.util.*;
+class ConsVow
+{
+	public static void main(String[] args)
+	{	
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the charecter:");
+		char ch=sc.next().charAt(0);
+		if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'||ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U')
+		System.out.println("You entered vowel");
+		else if((ch>='a' && ch<='z')||(ch>='A' && ch<='Z')) 	
+		System.out.println("You entered consonant");
+		else if(ch>='0' && ch<='9')
+		System.out.println("You entered number");
+		else
+		System.out.println("You entered special charecter");	
+	}
+}
+OUTPUT:
+ 
+10)Write a program to accept n names from user and sort them in ascending order.
+CODE:
+import java.util.*;
+public class Alpha_Order
+{
+	public static void main(String[] args)
+	{
+		int n;
+		String temp;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter number of name you want to enter:");
+		n=sc.nextInt();
+		String[] names=new String[n];
+		System.out.println("Enter "+n+" names:");
+		for(int i=0;i<n;i++)
+		{
+			names[i]=sc.next();
+		}
+		for(int i=0;i<n;i++)
+		{
+			for(int j=i+1;j<n;j++)
+			{
+				if(names[i].compareTo(names[j])>0)
+				{
+					temp=names[i];
+					names[i]=names[j];
+					names[j]=temp;
+				}
+			}
+		}
+		System.out.println("Names in sorted order:");
+		for(int i=0;i<n;i++)
+		{
+			System.out.println(names[i]+",");
+		}
+	}
+}
+OUTPUT:
+ 
+11) Write a program to find average of array value.
+CODE:
+class AvgArr
+{
+    	public static void main(String[] args) 
+	{
+
+		int [] arr = { 2,4,5,8 };
+		int sum = 0;
+		for (double value : arr) 
+		{
+			sum += value;
+        	}
+	        double average = sum / arr.length;
+	        System.out.println("The average of the values is: " + average);
+    	}
+}
+OUTPUT:
+ 
+
+12)Write a java program to find the maximum and minimum value of an array.
+CODE:
+import java.util.Scanner;
+public class Arrmatrix
+{
+	public static void main(String[] args)
+	{
+		int n, temp;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter number of element in array:");
+		n=sc.nextInt();
+		int a[]=new int[n];
+		System.out.println("Enter "+n+" number:");
+		for(int i=0;i<n;i++)
+		{
+			a[i]=sc.nextInt();
+		}
+		System.out.println("Enter element of array are:");
+		for(int i=0;i<n;i++)
+		{
+			System.out.print(a[i]+"\t");
+		}
+		for(int i=0;i<n;i++)
+		{
+			for(int j=i+1;j<n;j++)
+			{
+				if(a[i]>a[j])
+				{
+					temp=a[i];
+					a[i]=a[j];
+					a[j]=temp;
+				}
+			}
+		}
+		System.out.println("\nMin:"+a[0]+"\nMax:"+a[n-1]);
+	}
+}
+OUTPUT:
+ 
+13) Write a java program to find transpose of matrix. Accept matrix from user.
+CODE:
+import java.util.Scanner;
+class TransMat
+{
+	public static void main(String[] args)
+	{
+		int row,col;
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter how many row you wnat:");
+		row=sc.nextInt();
+		System.out.print("Enter how many column you wnat:");
+		col=sc.nextInt();
+		int [][] a=new int[row][col];
+		System.out.print("Enter element of matrix a:");
+		for(int i=0;i<row;i++)
+		{
+			for(int j=0;j<col;j++)
+			{
+				a[i][j]=sc.nextInt();
+			}
+		}
+		System.out.println("Matrix a:");
+		for(int i=0;i<row;i++)
+		{
+			for(int j=0;j<col;j++)
+			{
+				System.out.print(a[i][j]+"\t");
+			}
+			System.out.print("\n");
+		}
+		System.out.println("Transpose of matrix a:");
+		for(int i=0;i<row;i++)
+		{
+			for(int j=0;j<col;j++)
+			{
+				System.out.print(a[j][i]+"\t");
+			}
+			System.out.print("\n");
+		}
+	}
+}
+OUTPUT:
+ 
+14)Write java program to find addition of two matrices. Accept matrix from user.
+CODE:
+import java.util.Scanner;
+class AddMatrices
+{
+	public static void main(String[] args)
+	{
+		int row,col;
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter number of row you want:");
+		row=sc.nextInt();
+		System.out.print("Enter number of columns you want:");
+		col=sc.nextInt();
+		int [][] a=new int[row][col]; //for matrix 1
+		int [][] b=new int[row][col]; //for matrix 2
+		int [][] c=new int[row][col]; //for matrix 3
+		System.out.println("Enter elemnts of matrix a:");
+		for(int i=0;i<row;i++)
+		{
+			for(int j=0;j<col;j++)
+			{
+				a[i][j]=sc.nextInt();
+			}
+		}
+		System.out.println("Enter elemnts of matrix b:");
+		for(int i=0;i<row;i++)
+		{
+			for(int j=0;j<col;j++)
+			{
+				b[i][j]=sc.nextInt();
+			}
+		}
+		System.out.println("Matrix a:");
+		for(int i=0;i<row;i++)
+		{
+			for(int j=0;j<col;j++)
+			{
+				System.out.print(a[i][j] + "\t");
+			}
+			System.out.print("\n");
+		}
+		System.out.println("Matrix b:");
+		for(int i=0;i<row;i++)
+		{
+			for(int j=0;j<col;j++)
+			{
+				System.out.print(b[i][j] + "\t");
+			}
+			System.out.print("\n");
+		}
+		for(int i=0;i<row;i++)
+		{
+			for(int j=0;j<col;j++)
+			{
+				c[i][j]=a[i][j]+b[i][j];
+			}
+		}
+
+		System.out.println(":: Final matrix:");
+		for(int i=0;i<row;i++)
+		{
+			for(int j=0;j<col;j++)
+			{
+				System.out.print(c[i][j] + "\t");
+			}
+			System.out.print("\n");
+		}
+	}
+}
+OUTPUT:
+ 	
+15)Write java program to find multiplication of two matrices. Accept matrix from user.
+CODE:
+import java.util.Scanner;
+class MultiMatrices
+{
+	public static void main(String[] args)
+	{
+		int row,col;
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter number of row you want:");
+		row=sc.nextInt();
+		System.out.print("Enter number of columns you want:");
+		col=sc.nextInt();
+		int [][] a=new int[row][col]; //for matrix 1
+		int [][] b=new int[row][col]; //for matrix 2
+		int [][] c=new int[row][col]; //for matrix 3
+		System.out.println("Enter elemnts of matrix a:");
+		for(int i=0;i<row;i++)
+		{
+			for(int j=0;j<col;j++)
+			{
+				a[i][j]=sc.nextInt();
+			}
+		}
+		System.out.println("Enter elemnts of matrix b:");
+		for(int i=0;i<row;i++)
+		{
+			for(int j=0;j<col;j++)
+			{
+				b[i][j]=sc.nextInt();
+			}
+		}
+		System.out.println("Matrix a:");
+		for(int i=0;i<row;i++)
+		{
+			for(int j=0;j<col;j++)
+			{
+				System.out.print(a[i][j] + "\t");
+			}
+			System.out.print("\n");
+		}
+		System.out.println("Matrix b:");
+		for(int i=0;i<row;i++)
+		{
+			for(int j=0;j<col;j++)
+{
+				System.out.print(b[i][j] + "\t");
+			}
+			System.out.print("\n");
+		}
+		for(int i=0;i<row;i++)
+		{
+			for(int j=0;j<col;j++)
+			{
+				c[i][j]=a[i][j]*b[i][j];
+			}
+		}
+
+		System.out.println(":: Final matrix:");
+		for(int i=0;i<row;i++)
+		{
+			for(int j=0;j<col;j++)
+			{
+				System.out.print(c[i][j] + "\t");
+			}
+			System.out.print("\n");
+		}
+	}
+}
+OUTPUT:
+ 
+
+
