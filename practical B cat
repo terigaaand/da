@@ -1,0 +1,151 @@
+
+1)AIM: Write an arithmetic class that includes methods for operations such as addition, subtraction, multiplication, division, etc and test it.
+CODE:
+import java.util.*;
+import java.io.*;
+class Arthmatic
+{
+	public String add(double i, double j)
+	{
+		return("Addition of "+i+" and "+j+" is "+(i+j));
+	}
+	public String sub(double i, double j)
+	{
+		return("Subtraction of "+i+" and "+j+" is "+(i-j));
+	}
+	public String mul(double i, double j)
+	{
+		return("Multiplication of "+i+" and "+j+" is "+(i*j));
+	}
+	public String div(double i, double j)
+	{
+		return("Divion of "+i+" and "+j+" is "+(i/j));
+	}
+}
+public class Calc
+{
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter 1st no:");
+		double i=sc.nextDouble();
+		System.out.println("Enter  2nd no:");
+		double j=sc.nextDouble();
+		Arthma  tic a=new Arthmatic();
+		System.out.println(a.add(i,j));
+		System.out.println(a.sub(i,j));
+		System.out.println(a.mul(i,j));
+		System.out.println(a.div(i,j));
+	}
+}
+OUTPUT:
+ 
+2) AIM: Write a java program to design a class Area for calculating area of rectangle. Use the concept of constructor. (default and parameterized constructor)
+CODE:
+//Area.java
+class Area
+{
+	double l,b;
+	Area()
+	{
+		l=25.3;
+		b=67;
+	}
+	Area(double l,double b)
+	{
+		this.l=l;
+		this.b=b;
+	}
+	public String calArea()
+	{
+		return("Area of rect with len="+l+" and Breadth="+b+" is"+(l*b));
+	}
+}
+//TestArea.java
+import java.util.Scanner;
+class TestArea
+{
+	public static void main(String args[])
+	{
+		Scanner sc=new
+		Scanner(System.in);
+		System.out.println("Enter length: ");
+		double i=sc.nextDouble();
+		System.out.println("Enter breadth: ");
+		double j=sc.nextDouble();
+		Area a=new Area();
+		System.out.println("Default Contructor: "+a.calArea());
+		a=new Area(i,j);
+		System.out.println("Parameterized Constructor: "+a.calArea());
+		}
+}
+OUTPUT:
+ 
+
+
+
+PRACTICAL CATEGORY(C)
+1)Create a class animal with few methods in it. Create its child classes such as Dog and Cat which overrides method of its parent class. Create AnimalWorld class test working of program.
+CODE:
+class Animal
+{
+    public Animal()
+    {
+        System.out.println("New animal has been created");
+    }
+    public void sleep()
+    {
+        System.out.println("animal sleep....");
+    }
+    public void eat()
+    {
+        System.out.println("Animal is eating");
+    }
+}
+public class Cat extends Animal
+{
+	public Cat()
+	{
+		super();
+		System.out.println("cat is created");
+	}
+	public void sleep()
+	{
+		System.out.println("cat is slepping...");
+	}
+	public void meaw()
+	{
+		System.out.println("Cat meaws......");
+	}
+}
+public class Dog extends Animal
+{
+	public Dog()
+	{
+		super();
+		System.out.println("Dog is created");
+	}
+	public void sleep()
+	{
+		System.out.println("Dog is slepping...");
+	}
+	public void bark()
+	{
+		System.out.println("Dog bark......");
+	}
+}
+class AnimalWorld
+{
+	public static void main(String [] args)
+	{
+		Cat c=new Cat();
+		Dog d=new Dog();
+		c.meaw();
+		d.eat();
+		d.bark();
+		d.eat();
+	}
+}
+OUTTPUT:
+ 
+
